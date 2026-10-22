@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alkh Dhani Enterprises — Finance App</title>
+<style>
+:root{--green:#123d32;--green2:#1c5948;--gold:#d9b568;--cream:#f7f5ef;--ink:#18251f;--muted:#77827b;--line:#e7e9e3;--red:#bd5a50;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#e9ede8;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.shell{min-height:100vh;display:flex;justify-content:center;padding:24px 12px}.phone{width:100%;max-width:420px;min-height:820px;background:var(--cream);border:1px solid #dce2da;border-radius:32px;overflow:hidden;box-shadow:0 22px 70px #183b2b25;position:relative}
+.topbar{height:34px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:11px;letter-spacing:.3px}
+header{background:var(--green);color:white;padding:19px 22px 24px;border-radius:0 0 26px 26px}
+.brandrow{display:flex;align-items:center;gap:10px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#f1d58d,#bd9445);display:grid;place-items:center;color:var(--green);font-size:22px;font-weight:900}.brand{font-size:15px;font-weight:750;letter-spacing:.15px}.tagline{font-size:10px;color:#d4dfd6;margin-top:3px}
+.headline{margin-top:24px;font-size:25px;line-height:1.2;font-weight:750;letter-spacing:-.6px}.subline{font-size:12px;color:#d4dfd6;margin-top:7px;line-height:1.5}
+main{padding:19px 18px 96px}.eyebrow{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);font-weight:800}.sectiontitle{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px;font-weight:750;font-size:15px}.link{border:0;background:none;color:var(--green2);font-weight:750;font-size:11px;cursor:pointer}
+.balance{background:linear-gradient(135deg,var(--green),#205b47);color:white;padding:20px;border-radius:22px;box-shadow:0 10px 24px #123d3220}.balance .label{font-size:11px;color:#d7e3da}.balance .amount{font-size:30px;font-weight:800;letter-spacing:-.8px;margin:8px 0 17px}.balancefoot{border-top:1px solid #ffffff28;padding-top:13px;display:flex;justify-content:space-between;font-size:10px;color:#d7e3da}.goldpill{background:#f0d99f;color:#284336;padding:6px 9px;border-radius:99px;font-size:10px;font-weight:800}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric,.service,.transaction,.welcome-card{background:white;border:1px solid var(--line);border-radius:17px;padding:15px}.metriclabel{font-size:11px;color:var(--muted)}.metricvalue{font-size:19px;font-weight:800;margin:8px 0 4px}.positive{font-size:10px;color:var(--green2);font-weight:750}.negative{font-size:10px;color:var(--red);font-weight:750}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.quick button{border:1px solid var(--line);background:#fff;border-radius:15px;padding:13px 4px 10px;font-size:10px;color:var(--ink);font-weight:700;cursor:pointer}.quick .ico{display:grid;place-items:center;margin:0 auto 8px;width:34px;height:34px;background:#edf3ec;border-radius:12px;font-size:17px;color:var(--green)}
+.transaction{display:flex;align-items:center;gap:11px;padding:12px;margin-bottom:8px}.txico{width:38px;height:38px;flex:0 0 38px;border-radius:13px;background:#edf3ec;display:grid;place-items:center;font-size:16px}.txinfo{flex:1;min-width:0}.txname{font-size:12px;font-weight:750}.txdate{font-size:10px;color:var(--muted);margin-top:4px}.txamount{font-size:12px;font-weight:800;white-space:nowrap}.txamount.in{color:var(--green2)}.txamount.out{color:var(--red)}
+.nav{position:absolute;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:11px 8px 16px}.nav button{border:0;background:transparent;color:#8a958d;font-size:9px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px}.nav .navico{font-size:18px}.nav button.active{color:var(--green2)}
+.screen{display:none}.screen.active{display:block}
+.welcome{padding:0 22px 25px}.welcomehero{background:linear-gradient(145deg,#123d32,#235e49);color:#fff;padding:25px 22px 28px;border-radius:0 0 30px 30px;min-height:330px;position:relative;overflow:hidden}.orb{position:absolute;width:210px;height:210px;border:1px solid #d9b56870;border-radius:50%;right:-70px;top:35px}.orb:before,.orb:after{content:"";position:absolute;border:1px solid #d9b56860;border-radius:50%;inset:22px}.orb:after{inset:48px}.welcome .brandrow{margin-bottom:42px}.welcome h1{font-size:31px;line-height:1.13;letter-spacing:-1px;max-width:260px;margin:0 0 12px;position:relative}.welcome p{font-size:12px;line-height:1.6;color:#d4dfd6;max-width:255px;position:relative}.welcome-card{margin-top:19px;padding:18px}.welcome-card h3{font-size:14px;margin:0 0 7px}.welcome-card p{color:var(--muted);font-size:11px;line-height:1.6;margin:0}.btn{border:0;background:var(--gold);color:#203d30;border-radius:14px;padding:15px 18px;font-size:13px;font-weight:850;cursor:pointer;width:100%;margin-top:20px}.btn.green{background:var(--green);color:#fff}.btn.outline{background:transparent;border:1px solid #cfd8cf;color:var(--green);margin-top:10px}
+.service{cursor:pointer;transition:transform .15s}.service:active{transform:scale(.98)}.service .servico{font-size:20px;margin-bottom:13px}.service h3{font-size:12px;margin:0 0 6px}.service p{font-size:10px;color:var(--muted);line-height:1.5;margin:0}.formcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:17px;margin-top:13px}.field{margin:14px 0}.field label{display:block;font-size:11px;font-weight:750;color:#4f5e55;margin-bottom:7px}.field input,.field select{width:100%;border:1px solid #dce3db;border-radius:12px;background:#fbfcf9;padding:12px 13px;font-size:14px;color:var(--ink);outline-color:var(--gold)}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px}.emiresult{background:#edf3ec;border:1px solid #dce8dc;padding:16px;border-radius:15px;margin-top:12px}.emiresult .big{font-size:26px;font-weight:850;color:var(--green);margin:6px 0}.emiresult p{font-size:10px;color:var(--muted);margin:0}.filters{display:flex;gap:7px;margin:12px 0}.filter{padding:8px 12px;border:1px solid var(--line);background:#fff;border-radius:99px;font-size:10px;font-weight:750;cursor:pointer}.filter.active{background:var(--green);color:white;border-color:var(--green)}.search{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:12px}.note{font-size:10px;color:var(--muted);line-height:1.5;margin-top:13px}.toast{position:absolute;top:45px;left:18px;right:18px;background:#203d30;color:white;padding:12px 15px;border-radius:12px;font-size:12px;box-shadow:0 8px 24px #0002;display:none;z-index:5}.toast.show{display:block}
+@media(max-width:360px){.headline{font-size:22px}.quick{grid-template-columns:repeat(2,1fr)}.balance .amount{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="shell"><div class="phone">
+<div class="topbar"><span>9:41</span><span>●●●  ▰  100%</span></div>
+<div class="toast" id="toast"></div>
+<section id="welcome" class="screen active">
+<div class="welcomehero">
+<div class="orb"></div>
+<div class="brandrow"><div class="logo">A</div><div><div class="brand">Alkh Dhani Enterprises</div><div class="tagline">BUSINESS • FINANCE • GROWTH</div></div></div>
+<div class="eyebrow" style="color:#e3c77f">YOUR FINANCIAL PARTNER</div>
+<h1>Build your business with confidence.</h1>
+<p>Simple tools to track money, plan repayments, and keep your business moving forward.</p>
+</div>
+<div class="welcome">
+<div class="welcome-card"><h3>Everything important, in one place.</h3><p>View your balance, understand your cash flow, and estimate loan EMIs with an easy-to-use dashboard.</p></div>
+<button class="btn" onclick="go('home')">Get Started&nbsp; →</button>
+<button class="btn outline" onclick="go('services')">Explore business services</button>
+<p class="note" style="text-align:center">A sample prototype for demonstration. Figures are illustrative.</p>
+</div>
+</section>
+<section id="home" class="screen">
+<header><div class="brandrow"><div class="logo">A</div><div><div class="brand">Alkh Dhani Enterprises</div><div class="tagline">BUSINESS FINANCE</div></div></div><div class="headline">Good morning 👋</div><div class="subline">Here’s your business overview.</div></header>
+<main>
+<div class="balance"><div class="label">Available balance</div><div class="amount">₹2,45,000</div><div class="balancefoot"><span>Updated just now</span><span class="goldpill">● Healthy cash flow</span></div></div>
+<div class="sectiontitle">This month <span class="eyebrow">OCTOBER 2026</span></div>
+<div class="grid"><div class="metric"><div class="metriclabel">↗ Total income</div><div class="metricvalue">₹85,000</div><div class="positive">↑ 8.4% vs last month</div></div><div class="metric"><div class="metriclabel">↘ Total expenses</div><div class="metricvalue">₹32,500</div><div class="negative">↑ 2.1% vs last month</div></div></div>
+<div class="sectiontitle">Quick actions</div>
+<div class="quick"><button onclick="go('services')"><span class="ico">▦</span>Services</button><button onclick="go('services');setTimeout(()=>document.getElementById('loanAmount').focus(),50)"><span class="ico">₹</span>Calculate EMI</button><button onclick="go('transactions')"><span class="ico">↕</span>Transactions</button><button onclick="toast('Reports are coming soon in this demo.')"><span class="ico">▤</span>Reports</button></div>
+<div class="sectiontitle">Recent activity <button class="link" onclick="go('transactions')">View all →</button></div>
+<div class="transaction"><div class="txico">↗</div><div class="txinfo"><div class="txname">Customer payment</div><div class="txdate">Today · 10:24 AM</div></div><div class="txamount in">+₹12,500</div></div>
+<div class="transaction"><div class="txico">▣</div><div class="txinfo"><div class="txname">Stock purchase</div><div class="txdate">Yesterday · 4:15 PM</div></div><div class="txamount out">−₹4,800</div></div>
+</main>
+</section>
+<section id="services" class="screen">
+<header><div class="brandrow"><div class="logo">A</div><div><div class="brand">Alkh Dhani Enterprises</div><div class="tagline">TOOLS FOR YOUR BUSINESS</div></div></div><div class="headline">Business services</div><div class="subline">Practical tools for everyday financial decisions.</div></header>
+<main>
+<div class="grid">
+<div class="service" onclick="document.getElementById('loanAmount').focus()"><div class="servico">🧮</div><h3>Loan & EMI Calculator</h3><p>Estimate monthly payments and total interest.</p></div>
+<div class="service" onclick="toast('Business finance details can be added here.')"><div class="servico">🏦</div><h3>Business Finance</h3><p>Organize your funding needs in one place.</p></div>
+<div class="service" onclick="go('transactions')"><div class="servico">💳</div><h3>Payment Records</h3><p>Review sample incoming and outgoing payments.</p></div>
+<div class="service" onclick="toast('Reports are coming soon in this demo.')"><div class="servico">📊</div><h3>Business Reports</h3><p>Get a clearer picture of your cash flow.</p></div>
+</div>
+<div class="sectiontitle">Loan & EMI calculator</div>
+<div class="formcard">
+<div class="field"><label for="loanAmount">Loan amount (₹)</label><input id="loanAmount" type="number" min="1" value="200000" oninput="calculateEMI()"></div>
+<div class="twocol"><div class="field"><label for="rate">Interest rate (% p.a.)</label><input id="rate" type="number" min="0" step=".1" value="12" oninput="calculateEMI()"></div><div class="field"><label for="tenure">Tenure</label><select id="tenure" onchange="calculateEMI()"><option value="12">12 months</option><option value="24">24 months</option><option value="36" selected>36 months</option><option value="48">48 months</option><option value="60">60 months</option><option value="84">84 months</option></select></div></div>
+<div class="emiresult"><div class="eyebrow">Estimated monthly EMI</div><div class="big" id="emi">₹6,643</div><p id="emiDetails">Total repayment ₹2,39,148 · Interest ₹39,148</p></div>
+<button class="btn green" onclick="toast('Estimate updated. This is not a loan offer or approval.')">Update estimate</button>
+<p class="note">Illustrative estimate using monthly reducing-balance interest. Actual lender charges, fees, taxes and terms may differ.</p>
+</div>
+</main>
+</section>
+<section id="transactions" class="screen">
+<header><div class="brandrow"><div class="logo">A</div><div><div class="brand">Alkh Dhani Enterprises</div><div class="tagline">MONEY IN • MONEY OUT</div></div></div><div class="headline">Transactions</div><div class="subline">Keep track of your business activity.</div></header>
+<main>
+<div class="grid"><div class="metric"><div class="metriclabel">Money received</div><div class="metricvalue" style="color:var(--green2)">₹85,000</div><div class="positive">This month</div></div><div class="metric"><div class="metriclabel">Money spent</div><div class="metricvalue" style="color:var(--red)">₹32,500</div><div class="negative">This month</div></div></div>
+<div class="sectiontitle">All activity <span class="eyebrow">SAMPLE DATA</span></div>
+<input class="search" id="search" placeholder="Search transactions…" oninput="filterTransactions()">
+<div class="filters"><button class="filter active" onclick="setFilter('all',this)">All</button><button class="filter" onclick="setFilter('in',this)">Income</button><button class="filter" onclick="setFilter('out',this)">Expenses</button></div>
+<div id="txlist">
+<div class="transaction" data-type="in" data-search="customer payment sales"><div class="txico">↗</div><div class="txinfo"><div class="txname">Customer payment</div><div class="txdate">22 Oct 2026 · 10:24 AM</div></div><div class="txamount in">+₹12,500</div></div>
+<div class="transaction" data-type="out" data-search="stock purchase inventory"><div class="txico">▣</div><div class="txinfo"><div class="txname">Stock purchase</div><div class="txdate">21 Oct 2026 · 4:15 PM</div></div><div class="txamount out">−₹4,800</div></div>
+<div class="transaction" data-type="in" data-search="invoice payment sales"><div class="txico">↗</div><div class="txinfo"><div class="txname">Invoice payment</div><div class="txdate">20 Oct 2026 · 1:05 PM</div></div><div class="txamount in">+₹8,200</div></div>
+<div class="transaction" data-type="out" data-search="electricity bill utility"><div class="txico">ϟ</div><div class="txinfo"><div class="txname">Electricity bill</div><div class="txdate">19 Oct 2026 · 11:30 AM</div></div><div class="txamount out">−₹1,650</div></div>
+<div class="transaction" data-type="in" data-search="cash sale sales"><div class="txico">₹</div><div class="txinfo"><div class="txname">Cash sale</div><div class="txdate">18 Oct 2026 · 6:42 PM</div></div><div class="txamount in">+₹5,400</div></div>
+<div class="transaction" data-type="out" data-search="transport delivery"><div class="txico">⇢</div><div class="txinfo"><div class="txname">Transport & delivery</div><div class="txdate">17 Oct 2026 · 9:20 AM</div></div><div class="txamount out">−₹950</div></div>
+</div>
+<p class="note">Transactions shown are example data only. This prototype is not connected to a bank account or payment service.</p>
+</main>
+</section>
+<nav class="nav" id="nav" style="display:none">
+<button data-screen="home" class="active" onclick="go('home')"><span class="navico">⌂</span>Home</button>
+<button data-screen="services" onclick="go('services')"><span class="navico">▦</span>Services</button>
+<button data-screen="transactions" onclick="go('transactions')"><span class="navico">↕</span>Transactions</button>
+<button onclick="toast('Profile settings can be added in the next version.')"><span class="navico">◎</span>Profile</button>
+</nav>
+</div></div>
+<script>
+let currentFilter='all';
+function go(id){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));
+ const nav=document.getElementById('nav');nav.style.display=id==='welcome'?'none':'grid';
+ nav.querySelectorAll('button[data-screen]').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));
+ window.scrollTo({top:0,behavior:'smooth'});calculateEMI();
+}
+function money(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function calculateEMI(){
+ const p=Math.max(0,Number(document.getElementById('loanAmount').value)||0);
+ const annual=Math.max(0,Number(document.getElementById('rate').value)||0);
+ const n=Math.max(1,Number(document.getElementById('tenure').value)||36);
+ const r=annual/1200;let emi=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+ const total=emi*n;document.getElementById('emi').textContent=money(emi);
+ document.getElementById('emiDetails').textContent='Total repayment '+money(total)+' · Interest '+money(total-p);
+}
+function setFilter(f,el){currentFilter=f;document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));el.classList.add('active');filterTransactions()}
+function filterTransactions(){const q=(document.getElementById('search').value||'').toLowerCase();document.querySelectorAll('#txlist .transaction').forEach(t=>{const okType=currentFilter==='all'||t.dataset.type===currentFilter;const okQ=(t.dataset.search+' '+t.innerText).toLowerCase().includes(q);t.style.display=okType&&okQ?'flex':'none'})}
+let toastTimer;function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2600)}
+calculateEMI();
+</script>
+</body></html>
